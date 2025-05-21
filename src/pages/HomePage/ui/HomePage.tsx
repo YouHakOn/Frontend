@@ -1,11 +1,21 @@
+'use client';
+
 import Link from "next/link"
 
+import { useMantineTheme } from "@mantine/core"
 import cls from "./HomePage.module.css"
 
 const HomePage = () => {
+	const theme = useMantineTheme();
+
 	return (
 		<div className={cls.homepage}>
-			<p className={cls.font}>
+			{/* test */}
+			<p 
+				style={{
+					backgroundColor: theme.colors.primary[2]
+				}}
+			>
 				Hello from{" "}
 				<Link
 					href="https://github.com/yunglocokid"

@@ -1,12 +1,12 @@
 import React from 'react';
-import { createTheme, colorsTuple, MantineProvider } from '@mantine/core';
+import { createTheme, MantineProvider } from '@mantine/core';
 
 const theme = createTheme({
   primaryColor: 'primary',
   colors: {
     'primary': [
       '#EAFAF4', '#D1F7E3', '#A9F0CC', '#80EAB5', '#00C471', 
-      '#009D5E', '#009D5E', '#009D5E', '#00784D', '#004D2D', '#00331D'
+      '#009D5E', '#009D5E', '#009D5E', '#00784D', '#004D2D'
     ],
     'secondary': [
       '#F5FAFF', '#DFF0FE', '#B3D9FA', '#86BFF5', '#5AA0F0',
@@ -42,7 +42,30 @@ const theme = createTheme({
       '#FF5C45', '#FFC83C', '#33D486', '#3789FF',
       '#FF5C45', '#FFC83C', '#33D486', '#3789FF', '#FF5C45', '#FFC83C'
     ],
-  }
+  },
+  fontFamily: 'Pretendard',
+  fontSizes: {
+    h0: '32px',
+    h1: '28px',
+    h2: '24px',
+    h3: '20px',
+    b1: '18px',
+    b2: '16px',
+    c1: '14px',
+    c2: '12px',
+  },
+  lineHeights: {
+    h0: '42px',
+    h1: '38px',
+    h2: '34px',
+    h3: '28px',
+    b1: '26px',
+    b2: '24px',
+    c1: '20px',
+    c2: '18px',
+  },
+
+
 });
 
 interface PropType {
