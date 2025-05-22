@@ -1,5 +1,5 @@
-import React from 'react';
-import { createTheme, MantineProvider } from '@mantine/core';
+import React from 'react'
+import { createTheme, MantineProvider } from '@mantine/core'
 
 const theme = createTheme({
   primaryColor: 'primary',
