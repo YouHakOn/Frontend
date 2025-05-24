@@ -37,6 +37,7 @@
 - `docs`: **문서** 코드 추가 및 수정
 - `test`: **테스트** 코드 추가 및 수정  
 - `refactor`: **리팩토링** (기능 변경 없이 구조 개선)
+- `style`: **스타일** 코드 추가 및 수정
 
 ### 커밋 메시지 예시(only *English*)
 - feat: add login feature
