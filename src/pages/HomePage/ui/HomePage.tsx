@@ -1,4 +1,5 @@
-import { Button } from "@shared/ui/button/button"
+import { Button } from "@shared/ui/button"
+import { Input } from "@shared/ui/input/input"
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
       >
         로그인
       </Button>
+      <Input className="w-full" aria-invalid="false" disabled={false} placeholder="이메일을 입력해주세요"/>
     </div>
   )
 }
