@@ -1,8 +1,0 @@
-.root {
-  &[data-size='lg'] {
-    height: 3.5rem;
-    font-size: var(--mantine-font-size-b2);
-    line-height: var(--mantine-line-height-b2);
-    padding: 1rem;
-  }
-}

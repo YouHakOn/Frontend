@@ -1,27 +1,25 @@
-'use client'
-
-import { Button, useMantineTheme } from '@mantine/core'
+import { Button } from "@shared/ui/button/button"
 
 const HomePage = () => {
-  const theme = useMantineTheme()
-
   return (
     <div>
       {/* test */}
-      <p
-        style={{
-          backgroundColor: theme.colors.primary[2]
-        }}
+      <Button
+        variant="filled"
+        size="lg"
+        className='w-[149px]'
+        disabled
       >
-        <Button
-          style={{ width: '116px' }}
-          variant="filled"
-          color={theme.colors.primary[5]}
-          size="lg"
-        >
-          로그인
-        </Button>
-      </p>
+        로그인
+      </Button>
+      <Button
+        variant="secondary"
+        size="md"
+        className='w-[149px]'
+        // disabled
+      >
+        로그인
+      </Button>
     </div>
   )
 }

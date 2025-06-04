@@ -1,35 +1,29 @@
-import type { Metadata } from "next"
-import type { ReactNode } from "react"
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
-import localFont from "next/font/local"
-import "@mantine/core/styles.css"
-import "@app/styles/global.css"
-import ThemeProvider from "@app/providers/ThemeProvider"
+import localFont from 'next/font/local'
+import '@app/styles/global.css'
 
 const pretendard = localFont({
-	src: '../public/fonts/pretendard/woff2/PretendardVariable.woff2',
-	display: 'swap',
-	weight: '100 900',
-	variable: '--font-pretendard',
+  src: '../public/fonts/pretendard/woff2/PretendardVariable.woff2',
+  display: 'swap',
+  weight: '100 900',
+  variable: '--font-pretendard'
 })
 
 export const metadata: Metadata = {
-	title: "Let's Develop!",
-	description: "FSD Template with Next.js by yunglocokid",
+  title: "유멘토",
+  description: '멘토링 플랫폼 유멘토',
 }
 
 export default function RootLayout({
-	children,
+  children
 }: Readonly<{
-	children: ReactNode
+  children: ReactNode
 }>) {
-	return (
-		<html lang="ko" className={`${pretendard.variable}`}>
-			<body>
-				<ThemeProvider>
-					{children}
-				</ThemeProvider>
-			</body>
-		</html>
-	)
+  return (
+    <html lang="ko" className={`${pretendard.variable}`}>
+      <body>{children}</body>
+    </html>
+  )
 }
