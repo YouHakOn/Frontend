@@ -8,6 +8,10 @@
   font-family: 'Pretendard';
 }
 
+main {
+  @apply grid grid-cols-4 xs:grid-cols-8 gap-x-4 px-6;
+}
+
 @layer components {
   .text-b1-bold {
     @apply text-b1 font-bold;
@@ -142,4 +146,6 @@
   --text-c1: 0.75rem;
   --text-c1--line-height: 1.125rem;
   --text-c1--letter-spacing: -0.025em;
+
+  --breakpoint-xs: 376px;
 }

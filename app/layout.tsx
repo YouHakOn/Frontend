@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import type { Viewport } from 'next'
 
 import localFont from 'next/font/local'
 import '@app/styles/global.css'
@@ -14,6 +15,11 @@ const pretendard = localFont({
 export const metadata: Metadata = {
   title: "유멘토",
   description: '멘토링 플랫폼 유멘토',
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 }
 
 export default function RootLayout({
