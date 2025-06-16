@@ -1,7 +1,0 @@
-.label {
-    @apply text-[#767676]
-}
-
-.input {
-    @apply w-[720px] mt-[12px] border-(--color-line) focus:border-(--color-primary-50) disabled:bg-(--color-gray-10)
-}

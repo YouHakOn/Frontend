@@ -12,6 +12,24 @@ main {
   @apply grid grid-cols-4 xs:grid-cols-8 gap-x-4 px-6;
 }
 
+@media only screen and (min-width: 768px) {
+	.container {
+		grid-column: 1/9;
+	}
+}
+
+@media only screen and (min-width: 376px) and (max-width: 767px) {
+	.container {
+		grid-column: 1/9;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	.container {
+		grid-column: 1/5;
+	}
+}
+
 @layer components {
   .text-b1-bold {
     @apply text-b1 font-bold;

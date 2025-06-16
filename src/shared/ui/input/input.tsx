@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { cva, VariantProps } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@shared/lib/utils'
 
 // TODO: bg-transparent was original
@@ -23,12 +23,14 @@ const inputVariants = cva(
   }
 )
 
+
+
 function Input({
   className,
   type,
   size,
   ...props
-}: React.ComponentProps<'input'> & VariantProps<typeof inputVariants>) {
+}: Omit<React.ComponentProps<'input'>, 'size'> & VariantProps<typeof inputVariants>) {
   return (
     <input
       type={type}
