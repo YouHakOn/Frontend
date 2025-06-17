@@ -1,4 +1,5 @@
 import { Button } from '@shared/ui/button'
+import { Checkbox } from '@shared/ui/checkbox'
 import { Input } from '@shared/ui/input'
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from '@shared/ui/select'
 
@@ -18,27 +19,36 @@ const HomePage = () => {
         로그인
       </Button>
       <Input
+        size="md"
         className="w-full"
         aria-invalid="false"
         disabled={false}
         placeholder="이메일을 입력해주세요"
       />
       <div>
-      <SelectWrapper className="w-[180px]"/>
-      <SelectWrapper className="w-[180px]" disabled/>
+        <SelectWrapper className="w-[180px]" />
+        <SelectWrapper className="w-[180px]" disabled />
+      </div>
+      <div>
+        <Checkbox variant="ghost"/>
+        <span>Hello</span>
+      </div>
+       <div>
+        <Checkbox disabled/>
+        <span>Hello</span>
       </div>
     </div>
   )
 }
 
 type SelectWrapperProps = {
-  open?: boolean;
-  className?: string;
-  disabled?: boolean;
-};
+  open?: boolean
+  className?: string
+  disabled?: boolean
+}
 
 const SelectWrapper = (props: SelectWrapperProps) => {
-  const {open, ...rest} = props;
+  const { open, ...rest } = props
   return (
     <Select open={props.open}>
       <SelectTrigger {...rest}>
