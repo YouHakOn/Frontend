@@ -1,6 +1,7 @@
 import { Button } from '@shared/ui/button'
 import { Checkbox } from '@shared/ui/checkbox'
 import { Input } from '@shared/ui/input'
+import { RadioGroup, RadioGroupItem } from '@shared/ui/radiogroup'
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from '@shared/ui/select'
 
 const HomePage = () => {
@@ -30,13 +31,23 @@ const HomePage = () => {
         <SelectWrapper className="w-[180px]" disabled />
       </div>
       <div>
-        <Checkbox variant="ghost"/>
+        <Checkbox variant="ghost" />
         <span>Hello</span>
       </div>
-       <div>
-        <Checkbox disabled/>
+      <div>
+        <Checkbox disabled />
         <span>Hello</span>
       </div>
+      <RadioGroup defaultValue="option-one">
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="option-one" id="option-one" />
+          <span>Option One</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="option-two" id="option-two" />
+          <span>Option Two</span>
+        </div>
+      </RadioGroup>
     </div>
   )
 }
