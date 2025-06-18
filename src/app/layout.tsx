@@ -3,10 +3,10 @@ import type { ReactNode } from 'react'
 import type { Viewport } from 'next'
 
 import localFont from 'next/font/local'
-import '@app/styles/global.css'
+import './global.css'
 
 const pretendard = localFont({
-  src: '../public/fonts/pretendard/woff2/PretendardVariable.woff2',
+  src: '../../public/fonts/pretendard/woff2/PretendardVariable.woff2',
   display: 'swap',
   weight: '100 900',
   variable: '--font-pretendard'
@@ -29,7 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${pretendard.variable}`}>
-      <body>{children}</body>
+      <body>
+        <div className='max-w-3xl flex flex-col items-center mx-auto'>
+          <head></head>
+          <main className='grid grid-cols-4 xs:grid-cols-8 gap-x-4 px-6'>
+            {children}
+          </main>
+        </div>
+      </body>
     </html>
   )
 }

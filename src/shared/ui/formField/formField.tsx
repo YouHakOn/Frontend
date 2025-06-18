@@ -12,6 +12,7 @@ function FormField<TFieldValues extends FieldValues>(
         <Form.Field className='mt-[24px]' name={props.name}>
             {props.label && <Form.Label className='text-[#767676]'>{props.label}</ Form.Label>}
             <Form.Control asChild>
+                {/* input으로 고정하지 말고 다양하게 할 수 있도록 */}
                 <Input
                     className='w-[720px] mt-[12px]'
                     {...field}

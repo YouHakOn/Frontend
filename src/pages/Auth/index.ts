@@ -1,3 +1,3 @@
-import { SignIn } from "./ui/SignIn/SignIn";
+import { SignIn } from "./SignIn/SignIn";
 
 export { SignIn }
