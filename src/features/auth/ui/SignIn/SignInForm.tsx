@@ -1,44 +1,83 @@
 'use client'
 
-import { Form } from "radix-ui"
-import { useForm, FieldValues } from "react-hook-form"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  FormSubmit
+} from '@shared/ui/form'
+import { useForm, FieldValues, FormProvider } from 'react-hook-form'
 import { Input } from '@shared/ui/input/input'
-import { FormField } from "@shared/ui/formField"
+// import { FormField } from "@shared/ui/formField"
 import * as React from 'react'
-
+import { z } from 'zod/v4'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Button } from '@shared/ui/button'
 
 function SignInForm() {
-    const method = useForm()
-    const { handleSubmit, control } = method;
+  const formSchema = z.object({
+    email: z.email({ error: '정확한 이메일을 입력해주세요.' }),
+    password: z
+      .string()
+      .min(1, { message: '비밀번호를 입력해주세요.' })
+      .max(15, { message: '비밀번호는 15자 이하로 입력해주세요.' })
+  })
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: '',
+      password: ''
+    }
+  })
+  const { handleSubmit, control } = form
 
-    const onSubmit = (data: FieldValues) => console.log(data);
+  const onSubmit = (data: FieldValues) => console.log(data)
 
-    return (
-        <Form.Root onSubmit={handleSubmit(onSubmit)}>
-            <FormField
-                control={control}
-                rules={{ required: true }}
-                name='email'
-                type='email'
-                label='이메일'
-                placeholder='이메일을 입력해주세요'>
-            </FormField>
-            <FormField
-                control={control}
-                rules={{ required: true }}
-                name='password'
-                type='password'
-                label='비밀번호'
-                placeholder='비밀번호를 입력해주세요'>
-            </FormField>
-            <Form.Submit asChild className='outline-none mt-[32px]'>
+  return (
+    <FormProvider {...form}>
+      <Form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>이메일</FormLabel>
+              <FormControl>
+                <Input placeholder="이메일을 입력해주세요" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>비밀번호</FormLabel>
+              <FormControl>
                 <Input
-                    className='border-none w-[720px] bg-(--color-primary-50) text-[#FFFFFF] hover:bg-(--color-primary-60) focus:bg-(--color-primary-70) disabled:bg-(--color-gray-10)'
-                    value='로그인'
+                  type="password"
+                  placeholder="비밀번호를 입력해주세요"
+                  maxLength={15}
+                  {...field}
                 />
-            </Form.Submit>
-        </Form.Root>
-    )
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormSubmit asChild>
+          <Button variant="filled" className="w-full mt-2">
+            로그인
+          </Button>
+        </FormSubmit>
+      </Form>
+    </FormProvider>
+  )
 }
 
 export { SignInForm }
