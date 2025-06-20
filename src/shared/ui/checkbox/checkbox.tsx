@@ -8,9 +8,7 @@ import { cn } from '@shared/lib/utils'
 const checkboxVariants = cva(
   [
     'peer text-line border-line data-[state=checked]:border-none',
-    // "focus-visible:border-ring focus-visible:ring-ring/50",
     'size-5.5 shrink-0 border shadow-xs transition-shadow outline-none focus-visible:ring-[3px]',
-    // "disabled:cursor-not-allowed aria-invalid:ring-destructive/20 aria-invalid:border-destructive",
   ],
   {
     variants: {

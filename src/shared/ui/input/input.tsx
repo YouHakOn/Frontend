@@ -5,7 +5,7 @@ import { cn } from '@shared/lib/utils'
 // TODO: bg-transparent was original
 const inputVariants = cva(
   [
-    'placeholder:text-text-info selection:text-default border-input flex rounded-md border bg-background px-4 outline-none disabled:bg-background-light disabled:text-text-disabled',
+    'placeholder:text-text-info text-text border-line flex rounded-md border bg-background px-4 outline-none disabled:bg-background-light disabled:text-text-disabled',
     'focus-visible:border-primary-50 focus-visible:ring-1 focus-visible:ring-primary-50',
     'aria-invalid:ring-error aria-invalid:border-error'
   ],
