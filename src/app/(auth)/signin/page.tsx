@@ -1,8 +1,6 @@
-import { SignInForm } from '@features/auth/ui/SignIn/SignInForm'
-import { Checkbox } from 'radix-ui'
+import { SignInForm } from "@features/auth/ui/SignIn/SignInForm";
 
-export const SignIn = () => {
-
+export default function SignInPage() {
     return (
         <div className='container'>
             <div
@@ -14,9 +12,6 @@ export const SignIn = () => {
                 className='w-[720px]'
             >유멘토에 오신 것을 환영합니다.</div>
             <SignInForm />
-            <Checkbox.Root>
-                <Checkbox.Indicator />
-            </Checkbox.Root>
         </div>
     )
 }
