@@ -1,7 +1,7 @@
 'use client'
 
-import { Form } from "radix-ui"
-import { useForm, FieldValues } from "react-hook-form"
+import { Form } from 'radix-ui'
+import { useForm, FieldValues } from 'react-hook-form'
 import { Input } from '@shared/ui/input/input'
 import { FormField } from "@shared/ui/formField"
 import * as React from 'react'
